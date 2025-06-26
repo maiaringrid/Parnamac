@@ -1,0 +1,35 @@
+services:
+  dns:
+    build:
+      context: ./dns
+      dockerfile: Dockerfile
+    container_name: dns 
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+
+  webmail:
+    build:
+      context: ./webmail
+      dockerfile: Dockerfile
+    container_name: webmail 
+
+
+  portal:
+    build:
+      context: ./portal
+      dockerfile: Dockerfile
+    container_name: portal
+
+
+  proxy:
+    build: 
+      context: ./proxy
+      dockerfile: Dockerfile
+    container_name: proxy_reverse
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - webmail
+      - portal
