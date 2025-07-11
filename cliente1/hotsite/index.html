@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parnamacflix — Promoção Imperdível</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141414, #1f1f1f);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url('https://www.themoviedb.org/t/p/original/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #e50914;
+            display: inline-block;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 10px #e50914, 0 0 20px #e50914;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .promo {
+            background-color: #e50914;
+            padding: 15px;
+            margin: 30px auto;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .promo:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-button {
+            background-color: #e50914;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #b0060e;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Parnamacflix</div>
+        <h1>O melhor site de filmes e séries do Rio Grande do Norte</h1>
+        <p>Assista onde e quando quiser, sem compromisso!</p>
+    </header>
+
+    <main>
+        <div class="promo">
+            🔥 Promoção especial: Primeira mensalidade com <strong>50% de desconto</strong>! <br>
+            Cancele quando quiser.
+        </div>
+
+        <a href="#" class="cta-button">Assinar agora</a>
+    </main>
+
+    <footer>
+        &copy; 2025 Parnamacflix. Todos os direitos reservados.
+    </footer>
+
+</body>
+
+</html>
