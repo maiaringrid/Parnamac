@@ -1,7 +1,0 @@
-zone "com.br"{
-    type master;
-    file "/etc/bind/db.com.br";
-    allow-transfer {
-        127.0.0.1;
-    };
-};
