@@ -6,9 +6,9 @@ zone "parnamac.com.br"{
     };
 };
 
-zone "parnamacflix.com.br"{
+zone "parnaflix.com.br"{
     type master;
-    file "/etc/bind/db.parnamacflix.com.br";
+    file "/etc/bind/db.parnaflix.com.br";
     allow-transfer {
         127.0.0.1;
     };

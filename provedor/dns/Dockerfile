@@ -12,7 +12,7 @@ RUN apt install bind9 dnsutils -y
 COPY named.conf.local /etc/bind
 
 COPY db.parnamac.com.br /etc/bind
-COPY db.parnamacflix.com.br /etc/bind
+COPY db.parnaflix.com.br /etc/bind
 
 # Todo container docker precisa de um ponto de entrada/execução para 
 # manter o container em funcionamento

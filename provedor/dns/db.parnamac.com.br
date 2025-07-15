@@ -8,9 +8,9 @@ $TTL    604800
 
 ; Registros de DNS
 @          IN  NS     ns.parnamac.com.br.       ; Define o servidor de nomes (NS) da zona como ns.parnamac.com.br
-@          IN  A      192.168.0.7               ; Define o IP do domínio principal (parnamac.com.br)
+@          IN  A      192.168.0.6               ; Define o IP do domínio principal (parnamac.com.br)
 @          IN  MX     10 webmail.parnamac.com.br. ; Define o servidor de e-mail para o domínio como webmail.parnamac.com.br com prioridade 10
 
-ns         IN  A      192.168.0.7               ; Define o IP para o host ns.parnamac.com.br (servidor de DNS)
-webmail    IN  A      192.168.0.7               ; Define o IP para o host webmail.parnamac.com.br (servidor de e-mail)
-portal     IN  A      192.168.0.7               ; Define o IP para o host portal.parnamac.com.br (Portal do provedor)
+ns         IN  A      192.168.0.6               ; Define o IP para o host ns.parnamac.com.br (servidor de DNS)
+webmail    IN  A      192.168.0.6               ; Define o IP para o host webmail.parnamac.com.br (servidor de e-mail)
+portal     IN  A      192.168.0.6               ; Define o IP para o host portal.parnamac.com.br (Portal do provedor)

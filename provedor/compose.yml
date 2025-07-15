@@ -1,29 +1,96 @@
+version: '3.8'
+
 services:
+  ### Banco de Dados (PostgreSQL) ###
+  db:
+    image: postgres:15-alpine
+    container_name: sign-db
+    environment:
+      POSTGRES_USER: ${DB_USER:-dbuser}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-dbuserpass123}
+      POSTGRES_DB: ${DB_NAME:-docsign_db}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-dbuser} -d ${DB_NAME:-docsign_db}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - parnamac_net
+
+  ### Backend/API ###
+  backend:
+    image: salesfilho/sign-api:latest
+    container_name: sign-api
+    platform: linux/arm64
+    environment:
+      DB_HOST: db
+      DB_PORT: ${DB_PORT:-5432}
+      DB_USER: ${DB_USER:-dbuser}
+      DB_PASSWORD: ${DB_PASSWORD:-dbuserpass123}
+      DB_NAME: ${DB_NAME:-docsign_db}
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://backend:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - parnamac_net
+
+  ### Frontend / App ###
+  frontend:
+    image: salesfilho/sign-app:latest
+    container_name: sign-app
+    platform: linux/arm64
+    environment:
+      API_BASE_URL: ${API_BASE_URL:-http://localhost:8000/api}
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - parnamac_net
+
+  ### DNS ###
   dns:
     build:
       context: ./dns
       dockerfile: Dockerfile
-    container_name: dns 
+    container_name: dns
     ports:
       - "53:53/udp"
       - "53:53/tcp"
+    networks:
+      - parnamac_net
 
+  ### Webmail ###
   webmail:
     build:
       context: ./webmail
       dockerfile: Dockerfile
-    container_name: webmail 
+    container_name: webmail
+    networks:
+      - parnamac_net
 
-
+  ### Portal ###
   portal:
     build:
       context: ./portal
       dockerfile: Dockerfile
     container_name: portal
+    networks:
+      - parnamac_net
 
-
+  ### Proxy reverso ###
   proxy:
-    build: 
+    build:
       context: ./proxy
       dockerfile: Dockerfile
     container_name: proxy_reverse
@@ -33,5 +100,15 @@ services:
     depends_on:
       - webmail
       - portal
+      - frontend
     volumes:
       - ./proxy/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - parnamac_net
+
+volumes:
+  postgres_data:
+
+networks:
+  parnamac_net:
+    driver: bridge
