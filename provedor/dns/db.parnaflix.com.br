@@ -7,11 +7,11 @@ $TTL    604800
                         604800 )  ; Negative Cache TTL
 
 ; Registros de DNS
-@          IN  NS     ns.parnaflix.com.br.       ; Define o servidor de nomes (NS) da zona como ns.parnamacflix.com.br
-@          IN  A      192.168.0.6               ; Define o IP do domínio principal (parnamacflix.com.br)
+@          IN  NS     ns.parnaflix.com.br.       ; Define o servidor de nomes (NS) da zona como ns.parnaflix.com.br
+@          IN  A      192.168.0.6               ; Define o IP do domínio principal (parnaflix.com.br)
 
-ns         IN  A      192.168.0.6               ; Define o IP para o host ns.parnamac.com.br (servidor de DNS)
-hotsite    IN  A      192.168.0.6               ; Define o IP para o host webmail.parnamac.com.br (servidor de e-mail)
-portal     IN  A      192.168.0.6               ; Define o IP para o host portal.parnamac.com.br (Portal do provedor)
+ns         IN  A      192.168.0.6              
+hotsite    IN  A      192.168.0.6               
+portal     IN  A      192.168.0.6             
 sign     IN  A      192.168.0.6 
 backend  IN  A      192.168.0.6 
