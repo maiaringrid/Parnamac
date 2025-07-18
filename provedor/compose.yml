@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  ### DNS ###
+  dns:
+    build:
+      context: ./dns
+      dockerfile: Dockerfile
+    container_name: dns
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    networks:
+      - parnamac_net
+
+  ### Webmail ###
+  webmail:
+    build:
+      context: ./webmail
+      dockerfile: Dockerfile
+    container_name: webmail
+    networks:
+      - parnamac_net
+
+  ### Portal ###
+  portal:
+    build:
+      context: ./portal
+      dockerfile: Dockerfile
+    container_name: portal
+    networks:
+      - parnamac_net
+
+  ### Proxy reverso ###
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    container_name: proxy_reverse
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - webmail
+      - portal
+
+    volumes:
+      - ./proxy/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - parnamac_net
+      - parnaflix_net
+
+volumes:
+  postgres_data:
+
+
+networks:
+  parnamac_net:
+    external: true
+  parnaflix_net:
+    external: true
