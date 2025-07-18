@@ -2,129 +2,93 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Parnamacflix — Promoção Imperdível</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #141414, #1f1f1f);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: url('https://www.themoviedb.org/t/p/original/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg') no-repeat center center/cover;
-            opacity: 0.2;
-            z-index: -1;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        .logo {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #e50914;
-            display: inline-block;
-            transition: transform 0.3s ease, text-shadow 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.1);
-            text-shadow: 0 0 10px #e50914, 0 0 20px #e50914;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-top: 20px;
-        }
-
-        p {
-            font-size: 1.2em;
-            margin: 10px 0 20px;
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .promo {
-            background-color: #e50914;
-            padding: 15px;
-            margin: 30px auto;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 8px;
-            font-size: 1.3em;
-            font-weight: bold;
-            transition: transform 0.3s ease;
-        }
-
-        .promo:hover {
-            transform: scale(1.05);
-        }
-
-        .cta-button {
-            background-color: #e50914;
-            color: #fff;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 1.2em;
-            margin-top: 20px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #b0060e;
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #999;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novidades Parnaflix</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
     <header>
-        <div class="logo">Parnamacflix</div>
-        <h1>O melhor site de filmes e séries do Rio Grande do Norte</h1>
-        <p>Assista onde e quando quiser, sem compromisso!</p>
+        <div class="logo">PARNAFLIX</div>
     </header>
 
     <main>
-        <div class="promo">
-            🔥 Promoção especial: Primeira mensalidade com <strong>50% de desconto</strong>! <br>
-            Cancele quando quiser.
-        </div>
+        <section class="hero">
+            <h1>AGOSTO IMPERDÍVEL</h1>
+            <p>Todo final de semana, um novo filme incrível!</p>
+        </section>
 
-        <a href="#" class="cta-button">Assinar agora</a>
+        <section class="movies">
+            <!-- Filme 1 -->
+            <div class="movie-card">
+                <img src="img/lilo.jpg" alt="Lilo & Stitch">
+                <div class="movie-info">
+                    <h3>Lilo & Stitch (01/08/2025)</h3>
+                    <p>Stitch, um alienígena, chega ao planeta Terra após fugir de sua prisão e tenta se passar por um
+                        cachorro para se camuflar. As coisas mudam quando Lilo, uma travessa menina, o adota de um
+                        abrigo de animais. Juntos, eles aprendem os valores da amizade e família.</p>
+                </div>
+            </div>
+
+            <!-- Filme 2 -->
+            <div class="movie-card">
+                <img src="img/banguela.jpg" alt="Como Treinar o Seu Dragão">
+                <div class="movie-info">
+                    <h3>Como Treinar o Seu Dragão (08/08/2025)</h3>
+                    <p>Na ilha de Berk, um garoto viking chamado Soluço desafia a tradição ao fazer amizade com o dragão
+                        Banguela. No entanto, quando uma ameaça surge, a amizade de Soluço com Banguela se torna a chave
+                        para forjar um novo futuro.</p>
+                </div>
+            </div>
+
+            <!-- Filme 3 -->
+            <div class="movie-card">
+                <img src="img/F1.jpg" alt="F1">
+                <div class="movie-info">
+                    <h3>F1 (15/08/2025)</h3>
+                    <p>Na década de 1990, Sonny Hayes era o piloto mais promissor da Fórmula 1 até que um acidente na
+                        pista quase encerrou sua carreira. Trinta anos depois, o proprietário de uma equipe de Fórmula 1
+                        em dificuldades convence Sonny a voltar a correr e se tornar o melhor do mundo.</p>
+                </div>
+            </div>
+
+            <!-- Filme 4 -->
+            <div class="movie-card">
+                <img src="img/superman.jpg" alt="Superman">
+                <div class="movie-info">
+                    <h3>Superman (22/08/2025)</h3>
+                    <p>Superman embarca em uma jornada para reconciliar sua herança kryptoniana com sua criação humana.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Filme 5 -->
+            <div class="movie-card">
+                <img src="img/quarteto.jpg" alt="Quarteto Fantástico">
+                <div class="movie-info">
+                    <h3>Quarteto Fantástico (29/08/2025)</h3>
+                    <p>Um grupo de astronautas passa por uma tempestade cósmica durante seu voo experimental. Ao
+                        retornar à Terra, os tripulantes descobrem que possuem novas e bizarras habilidades. Reed
+                        Richards pode esticar seu corpo. Sua noiva, Susan Storm, ganha a habilidade de se tornar
+                        invisível. Seu irmão mais novo, Johnny Storm, adquiriu o poder de controlar o fogo e voar. Já o
+                        piloto Ben Grimm foi transformado em um monstro rochoso. Ao tentar compreender seus poderes,
+                        eles têm que lidar com novas ameaças.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>Não perca esses lançamentos!</h2>
+            <p>Assine agora e garanta acesso a todos os filmes.</p>
+            <button class="subscribe-btn">ASSINAR</button>
+        </section>
     </main>
 
     <footer>
-        &copy; 2025 Parnamacflix. Todos os direitos reservados.
+        <p>© 2025 Parnaflix. Todos os direitos reservados.</p>
     </footer>
-
 </body>
 
 </html>
