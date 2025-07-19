@@ -1,0 +1,15 @@
+zone "parnamac.com.br"{
+    type master;
+    file "/etc/bind/db.parnamac.com.br";
+    allow-transfer {
+        127.0.0.1;
+    };
+};
+
+zone "netflix.com.br"{
+    type master;
+    file "/etc/bind/db.netflix.com.br";
+    allow-transfer {
+        127.0.0.1;
+    };
+};
