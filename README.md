@@ -33,7 +33,7 @@ O projeto encontra-se em desenvolvimento. Atualmente, os seguintes módulos est�
   - ✅ Proxy reverso com SSL
   - ✅ Portal do cliente
   - ✅ Hotsite
-  - ✅ Sistema de login (Sign)
+  - ✅ Sistema de assinatura (Sign)
 
 ## 📁 Estrutura do Projeto
 
@@ -103,6 +103,6 @@ docker-compose up -d --build
   - `https://portal.parnamac.com.br`
 
 - Cliente 1:
-  - `https://portal.parnaflix.com.br`
-  - `https://hotsite.parnaflix.com.br`
-  - `https://sign.parnaflix.com.br`
+  - `https://portal.netflix.com.br`
+  - `https://hotsite.netflix.com.br`
+  - `https://sign.netflix.com.br`
