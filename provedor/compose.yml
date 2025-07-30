@@ -49,6 +49,8 @@ services:
     networks:
       - parnamac_net
       - parnaflix_net
+      - macau_net
+      - memorial_net
 
 volumes:
   postgres_data:
@@ -58,4 +60,8 @@ networks:
   parnamac_net:
     external: true
   parnaflix_net:
+    external: true
+  macau_net:
+    external: true
+  memorial_net:
     external: true
