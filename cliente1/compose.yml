@@ -63,13 +63,11 @@ services:
     image: nginx:alpine
     container_name: proxy1
     depends_on:
-      frontend:
-        condition: service_healthy
-      portal_c1:
-        condition: service_healthy
-      hotsite_c1:
-        condition: service_healthy
-
+      - portal_c1
+      - hotsite_c1
+      - frontend
+      - backend
+      - db
     ports:
       - "800:80" # Mudei para 800 para não conflitar com outros serviços
     networks:
