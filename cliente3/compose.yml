@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  ### Proxy do Cliente 3 ###
+  proxy3:
+    image: nginx:alpine
+    container_name: proxy3
+    depends_on:
+      - portal_c3
+      - cms_c3
+    ports:
+      - "8001:80" # Para testes locais
+    networks:
+      - memorial_net
+      - parnamac_net
+    volumes:
+      - ./proxy3/default.conf:/etc/nginx/conf.d/default.conf
+
+  ### Portal ###
+  portal_c3:
+    image: nginx:alpine
+    container_name: portal_c3
+    networks:
+      - memorial_net
+    volumes:
+      - ./portal:/usr/share/nginx/html
+
+  ### CMS ###
+  cms_c3:
+    image: nginx:alpine
+    container_name: cms_c3
+    networks:
+      - memorial_net
+    volumes:
+      - ./cms:/usr/share/nginx/html
+
+networks:
+  memorial_net:
+    external: true
+  parnamac_net:
+    external: true
