@@ -13,3 +13,19 @@ zone "netflix.com.br"{
         127.0.0.1;
     };
 };
+
+zone "memorial.com.br"{
+    type master;
+    file "/etc/bind/db.memorial.com.br";
+    allow-transfer {
+        127.0.0.1;
+    };
+};
+
+zone "macau.com.br"{
+    type master;
+    file "/etc/bind/db.macau.com.br";
+    allow-transfer {
+        127.0.0.1;
+    };
+};

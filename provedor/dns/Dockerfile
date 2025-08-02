@@ -13,6 +13,8 @@ COPY named.conf.local /etc/bind
 
 COPY db.parnamac.com.br /etc/bind
 COPY db.netflix.com.br /etc/bind
+COPY db.memorial.com.br /etc/bind
+COPY db.macau.com.br /etc/bind
 
 # Todo container docker precisa de um ponto de entrada/execução para 
 # manter o container em funcionamento
