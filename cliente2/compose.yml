@@ -7,9 +7,9 @@ services:
     container_name: proxy2
     depends_on:
       - portal_c2
-      - cms
-    ports:
-      - "8002:80" # Para testes locais
+      - wordpress
+      - db
+      - adminer
     networks:
       - macau_net
       - parnamac_net
@@ -25,14 +25,51 @@ services:
     volumes:
       - ./portal:/usr/share/nginx/html
 
-  ### CMS ###
-  cms:
-    image: nginx:alpine
-    container_name: cms
+  ### CMS (WordPress) ###
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - 9090:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppass
+      WORDPRESS_DB_NAME: wpdb
     networks:
       - macau_net
     volumes:
-      - ./cms:/usr/share/nginx/html
+      - ./site:/var/www/html # Usa os arquivos exportados
+
+  ### Banco de Dados do CMS ###
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    networks:
+      - macau_net
+    volumes:
+      - db_data:/var/lib/mysql # persiste o banco
+
+  ### Adminer (opcional, para gerenciar o banco) ###
+  adminer:
+    depends_on:
+      - db
+    image: adminer
+    restart: always
+    ports:
+      - 9999:8080
+    networks:
+      - macau_net
+    volumes:
+      - ./php.ini:/usr/local/etc/php/conf.d/uploads.ini
+volumes:
+  db_data:
+
 
 networks:
   macau_net:
