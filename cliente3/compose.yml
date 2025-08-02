@@ -7,7 +7,9 @@ services:
     container_name: proxy3
     depends_on:
       - portal_c3
-      - cms_c3
+      - wordpress
+      - db
+      - adminer
     ports:
       - "8001:80" # Para testes locais
     networks:
@@ -26,13 +28,49 @@ services:
       - ./portal:/usr/share/nginx/html
 
   ### CMS ###
-  cms_c3:
-    image: nginx:alpine
-    container_name: cms_c3
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - 8282:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppass
+      WORDPRESS_DB_NAME: wpdb
     networks:
       - memorial_net
     volumes:
-      - ./cms:/usr/share/nginx/html
+      - ./site:/var/www/html # Usa os arquivos exportados
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    networks:
+      - memorial_net
+    volumes:
+      - db_data:/var/lib/mysql # persiste o banco
+
+  adminer:
+    depends_on:
+      - db
+    image: adminer
+    restart: always
+    ports:
+      - 8888:8080
+    networks:
+      - memorial_net
+    volumes:
+      - ./php.ini:/usr/local/etc/php/conf.d/uploads.ini
+
+volumes:
+  db_data:
+
 
 networks:
   memorial_net:
