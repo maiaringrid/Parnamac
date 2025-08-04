@@ -73,10 +73,6 @@ Projeto/
 │ ├── site/ # CMS
 │ └── proxy3/ # Proxy reverso do cliente 3
 
-bash
-Copiar
-Editar
-
 ## 🔭 Objetivos Futuros
 
 - Finalizar os serviços que faltam para a entrega final do projeto.
