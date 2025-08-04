@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prefeitura Municipal de Macau - RN</title>
+    <style>
+        /* Reset e Fontes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #003366, #0066cc);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+        }
+
+        nav {
+            background-color: #004080;
+            padding: 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #005599;
+            border-radius: 4px;
+        }
+
+        /* Conteúdo Principal */
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .destaque {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .destaque h2 {
+            color: #003366;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .noticias {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .noticia {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .noticia:hover {
+            transform: translateY(-5px);
+        }
+
+        .noticia img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .noticia-conteudo {
+            padding: 1rem;
+        }
+
+        .noticia h3 {
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+        }
+
+        .noticia p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contatos {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .noticias {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="./images/brasao.jpg" alt="Brasão de Macau-RN">
+            <h1>Prefeitura Municipal de Macau - RN</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Notícias</a></li>
+                <li><a href="#">Turismo</a></li>
+                <li><a href="#">Economia</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <section class="destaque">
+            <h2>Bem-vindo a Macau</h2>
+            <p>Conhecida como a "Terra do Sal", Macau é um município rico em cultura e belezas naturais, localizado no
+                Rio Grande do Norte. Esta página é o portal oficial da prefeitura, onde você encontra informações sobre
+                serviços, turismo e notícias da cidade.</p>
+        </section>
+
+        <section class="destaque">
+            <h2>Notícias Recentes</h2>
+            <div class="noticias">
+                <article class="noticia">
+                    <img src="./images/prefeitura-macau.jpg" alt="Prefeitura de Macau">
+                    <div class="noticia-conteudo">
+                        <h3>Prefeitura anuncia novos investimentos em infraestrutura</h3>
+                        <p>O prefeito anunciou obras de pavimentação e revitalização do centro histórico.</p>
+                    </div>
+                </article>
+
+                <article class="noticia">
+                    <img src="./images/praia-diogo-lopes.jpg" alt="Praia de Diogo Lopes">
+                    <div class="noticia-conteudo">
+                        <h3>Turismo em alta na Praia de Diogo Lopes</h3>
+                        <p>A temporada de verão trouxe recorde de visitantes para a praia mais famosa de Macau.</p>
+                    </div>
+                </article>
+
+                <article class="noticia">
+                    <img src="./images/salinas-macau.jpg" alt="Salinas de Macau">
+                    <div class="noticia-conteudo">
+                        <h3>Salinas de Macau retomam produção em grande escala</h3>
+                        <p>Setor salineiro, tradicional na cidade, recebe incentivos do governo municipal.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Prefeitura Municipal de Macau - RN</p>
+        <p>© 2024 Todos os direitos reservados</p>
+        <div class="contatos">
+            <p>Telefone: (84) 3521-XXXX</p>
+            <p>E-mail: contato@macau.rn.gov.br</p>
+        </div>
+    </footer>
+</body>
+
+</html>
