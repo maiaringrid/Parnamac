@@ -50,6 +50,7 @@ O projeto encontra-se em desenvolvimento. Atualmente, os seguintes módulos est�
 
 ## 📁 Estrutura do Projeto
 
+```
 Projeto/
 ├── provedor/ # Ambiente do provedor
 │ ├── compose.yml # Orquestração do provedor
@@ -72,6 +73,7 @@ Projeto/
 │ ├── portal/ # Portal hospitalar
 │ ├── site/ # CMS
 │ └── proxy3/ # Proxy reverso do cliente 3
+```
 
 ## 🔭 Objetivos Futuros
 
