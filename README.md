@@ -56,6 +56,7 @@ Projeto/
 │ ├── compose.yml # Orquestração do provedor
 │ ├── dns/ # Servidor DNS (BIND9)
 │ ├── portal/ # Portal principal do provedor
+│ ├── portalproxy/ # Portal do proxy do provedor
 │ ├── proxy/ # Proxy reverso (Nginx com SSL)
 │ └── webmail/ # Servidor de e-mail (em desenvolvimento)
 ├── cliente1/ # Ambiente do cliente 1
@@ -77,7 +78,7 @@ Projeto/
 
 ## 🔭 Objetivos Futuros
 
-- Finalizar os serviços que faltam para a entrega final do projeto.
+- Finalizar os serviços que faltam.
 
 ## ▶️ Modo de Usar
 
@@ -133,6 +134,7 @@ Acesse os serviços nos navegadores:
 
 - Provedor:
   - `https://portal.parnamac.com.br`
+  - `https://proxy.parnamac.com.br`
 
 - Cliente 1:
   - `https://portal.netflix.com.br`
@@ -142,15 +144,11 @@ Acesse os serviços nos navegadores:
  - Cliente 2:
 
   - `https://portal.macau.com.br`
-
   - `https://adminer.macau.com.br`
-
   - `https://cms.macau.com.br`
 
  - Cliente 3:
 
   - `https://portal.meorial.com.br`
-
   - `https://adminer.memorial.com.br`
-
   - `https://cms.memorial.com.br`
