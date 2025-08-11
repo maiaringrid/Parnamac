@@ -2,233 +2,138 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prefeitura Municipal de Macau - RN</title>
-    <style>
-        /* Reset e Fontes */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-        }
-
-        /* Cabeçalho */
-        header {
-            background: linear-gradient(135deg, #003366, #0066cc);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .logo img {
-            height: 80px;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-        }
-
-        nav {
-            background-color: #004080;
-            padding: 0.5rem;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 0.5rem;
-            transition: all 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #005599;
-            border-radius: 4px;
-        }
-
-        /* Conteúdo Principal */
-        main {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .destaque {
-            background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .destaque h2 {
-            color: #003366;
-            border-bottom: 2px solid #0066cc;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .noticias {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .noticia {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .noticia:hover {
-            transform: translateY(-5px);
-        }
-
-        .noticia img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .noticia-conteudo {
-            padding: 1rem;
-        }
-
-        .noticia h3 {
-            color: #0066cc;
-            margin-bottom: 0.5rem;
-        }
-
-        .noticia p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: #003366;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-
-        .contatos {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .noticias {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Macau</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="logo">
-            <img src="./images/brasao.jpg" alt="Brasão de Macau-RN">
-            <h1>Prefeitura Municipal de Macau - RN</h1>
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="/" class="logo-link" title="Voltar para a página inicial">
+        <img src="img/logo.jpg" alt="Logo de Macau" class="logo" />
+      </a>
+      <ul class="menu">
+        <li><a href="#historia">História</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#obras">Obras</a></li>
+        <li><a href="#contato">Fale Conosco</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="img/videocidade.mp4" type="video/mp4" />
+    Seu navegador não suporta vídeo HTML5.
+  </video>
+  </header>
+
+
+  <section class="content">
+    <div class="section" id="historia">
+      <h2>História de Macau</h2>
+      <p>
+        Macau é um município localizado no estado do Rio Grande do Norte, pertencente à microrregião de Macau e ao Polo Costa Branca. Reconhecida nacionalmente pela produção de sal marinho, é uma das principais regiões salineiras do Brasil. Além disso, destaca-se na extração de petróleo e na pesca, sendo um dos maiores produtores de sardinha do país. A cidade também é famosa por seu carnaval vibrante, que atrai visitantes de diversas partes do estado e movimenta a economia local. A história de Macau remonta ao início do século XIX, quando era conhecida como ilha de Manoel Gonçalves, já colonizada com foco na produção de sal. O nome atual possui duas possíveis origens. De acordo com o historiador Câmara Cascudo, “Macau” deriva da expressão chinesa “A-man-gao” (“baía de Ama”), que nomeava a antiga colônia portuguesa na China, hoje território chinês, devido às semelhanças geográficas. Já o escritor Getúlio Moura, em seu livro Um Rio Grande e Macau, defende que o nome tem origem nas araras vermelhas chamadas “Macaw” pelos indígenas do Vale do Açu, que habitavam a região. Seus mapas históricos ilustram essas aves como símbolo da cidade.
+      </p>
+    </div>
+
+    <div class="galeria" id="galeria">
+      <div class="card horizontal">
+        <img src="img/salinas.jpeg" alt="Salinas de Macau" />
+        <div>
+          <h3>Salinas</h3>
+          <p>
+            As salinas são a alma econômica de Macau desde os tempos coloniais. A abundância e a qualidade do sal são reconhecidas desde o século XVII, sendo elemento fundamental para o desenvolvimento da região.
+          </p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Notícias</a></li>
-                <li><a href="#">Turismo</a></li>
-                <li><a href="#">Economia</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+      </div>
 
-    <!-- Conteúdo Principal -->
-    <main>
-        <section class="destaque">
-            <h2>Bem-vindo a Macau</h2>
-            <p>Conhecida como a "Terra do Sal", Macau é um município rico em cultura e belezas naturais, localizado no
-                Rio Grande do Norte. Esta página é o portal oficial da prefeitura, onde você encontra informações sobre
-                serviços, turismo e notícias da cidade.</p>
-        </section>
-
-        <section class="destaque">
-            <h2>Notícias Recentes</h2>
-            <div class="noticias">
-                <article class="noticia">
-                    <img src="./images/prefeitura-macau.jpg" alt="Prefeitura de Macau">
-                    <div class="noticia-conteudo">
-                        <h3>Prefeitura anuncia novos investimentos em infraestrutura</h3>
-                        <p>O prefeito anunciou obras de pavimentação e revitalização do centro histórico.</p>
-                    </div>
-                </article>
-
-                <article class="noticia">
-                    <img src="./images/praia-diogo-lopes.jpg" alt="Praia de Diogo Lopes">
-                    <div class="noticia-conteudo">
-                        <h3>Turismo em alta na Praia de Diogo Lopes</h3>
-                        <p>A temporada de verão trouxe recorde de visitantes para a praia mais famosa de Macau.</p>
-                    </div>
-                </article>
-
-                <article class="noticia">
-                    <img src="./images/salinas-macau.jpg" alt="Salinas de Macau">
-                    <div class="noticia-conteudo">
-                        <h3>Salinas de Macau retomam produção em grande escala</h3>
-                        <p>Setor salineiro, tradicional na cidade, recebe incentivos do governo municipal.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>Prefeitura Municipal de Macau - RN</p>
-        <p>© 2024 Todos os direitos reservados</p>
-        <div class="contatos">
-            <p>Telefone: (84) 3521-XXXX</p>
-            <p>E-mail: contato@macau.rn.gov.br</p>
+      <div class="card horizontal reverse">
+        <img src="img/moinho.jpg" alt="Moinho de Vento" />
+        <div>
+          <h3>Moinho</h3>
+          <p>
+            O Moinho de Vento é símbolo da cidade, reconhecido como patrimônio cultural e paisagístico do estado. Ele representa a força do vento e a tradição local, sendo um dos principais cartões-postais de Macau.
+          </p>
         </div>
-    </footer>
+      </div>
+
+      <div class="card horizontal">
+        <img src="img/praia.jpg" alt="Praia de Camapum" />
+        <div>
+          <h3>Praia de Camapum</h3>
+          <p>
+            Com águas rasas e tranquilas, a Praia de Camapum é famosa pela alta salinidade e excelente infraestrutura. Bares, pousadas e restaurantes tornam esse destino ideal para o turismo e lazer.
+          </p>
+        </div>
+      </div>
+
+      <div class="card horizontal reverse">
+        <img src="img/igreja.jpg" alt="Igreja Matriz de Macau" />
+        <div>
+          <h3>Igreja Matriz</h3>
+          <p>
+            A Igreja Nossa Senhora da Conceição, padroeira de Macau, é o centro da fé local. Sua festa, realizada de 28 de novembro a 8 de dezembro, movimenta a cidade com celebrações e eventos religiosos.
+          </p>
+        </div>
+      </div>
+
+      <div class="card horizontal">
+        <img src="img/entrada.webp" alt="Entrada da Cidade de Macau" />
+        <div>
+          <h3>Entrada da Cidade</h3>
+          <p>
+            Na entrada da cidade está o monumento à Nossa Senhora da Conceição, padroeira local. É o segundo cartão postal de Macau, representando fé e identidade cultural da população.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="obras" id="obras">
+  <h2 class="titulo-obras">Obras e notícias da cidade</h2>
+  <div class="obras-grid">
+    <div class="obra-card">
+      <img src="img/ambulancia.jpg" alt="Nova Ambulância do SAMU Reforça Atendimento de Urgência em Macau" />
+      <p>Nova Ambulância do SAMU Reforça Atendimento de Urgência em Macau</p>
+    </div>
+    <div class="obra-card">
+      <img src="img/pracadasmaes.jpg" alt="Praça das Mães" />
+      <p>Bairro de Valadão ganha nova Praça das Mães</p>
+    </div>
+    <div class="obra-card">
+      <img src="img/predioprefeitura.jpg" alt="Reformas" />
+      <p>Municipio avança em obras e reforça compromisso com a recuperação da infraestrutura</p>
+    </div>
+    <div class="obra-card">
+      <img src="img/teatro.jpg" alt="Teatro" />
+      <p>Novo Teatro Hianto de Almeida é entregue pela prefeitura</p>
+    </div>
+  </div>
+</section>
+
+
+  <section class="contato" id="contato">
+    <h2>Fale Conosco</h2>
+    <form action="#" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Prefeitura de Macau - Todos os direitos reservados</p>
+  </footer>
 </body>
 
 </html>
