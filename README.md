@@ -128,7 +128,14 @@ Copiar
 Editar
 cd ../provedor
 docker-compose up -d --build
-Configure o DNS da sua máquina para apontar para o IP utilizado no container DNS.
+
+**Para conseguir acessar as urls dos serviços a partir do navegador é necessário configure o DNS da sua máquina para apontar para o IP utilizado no container DNS.**
+- Como configurar:
+  1: Acesse o painel de controle da sua máquina
+  2: Vá para as configurações de Rede e Internet
+  3: Clique em central de rede e compartilhamento logo após em alterar as configurações do adaptador
+  4: Propriedades >> Protocolo IPv4
+  5: Selecione "Usar os seguintes endereços de servidor DNS" e insira o IP da sua máquina
 
 Acesse os serviços nos navegadores:
 
