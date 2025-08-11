@@ -14,3 +14,4 @@ $TTL    604800
 ns         IN  A      192.168.0.7               ; Define o IP para o host ns.parnamac.com.br (servidor de DNS)
 webmail    IN  A      192.168.0.7               ; Define o IP para o host webmail.parnamac.com.br (servidor de e-mail)
 portal     IN  A      192.168.0.7               ; Define o IP para o host portal.parnamac.com.br (Portal do provedor)
+proxy      IN  A      192.168.1.63                 ; Define o IP para o host portal.parnamac.com.br (Portal do proxy)
