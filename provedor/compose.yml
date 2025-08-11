@@ -31,6 +31,15 @@ services:
     networks:
       - parnamac_net
 
+  ### Portal Proxy ### 
+  portalproxy:
+    build:
+      context: ./portalproxy
+      dockerfile: Dockerfile
+    container_name: portalproxy
+    networks:
+      - parnamac_net
+
   ### Proxy reverso ###
   proxy:
     build:
